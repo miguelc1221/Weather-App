@@ -1,0 +1,10 @@
+body {
+    background-color: #0392d2;
+
+    h1 {
+        font-family: 'Chewy', cursive;
+        text-align: center;
+        font-size: 75px;
+        margin-top: 25px;
+    }
+}

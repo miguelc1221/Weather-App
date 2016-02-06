@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import './app.css';
 
-import SearchInput from './searchInput/search_Input';
+import SearchBar from './searchBar/search_Bar';
+import WeatherList from './weatherContent/weather_list.js';
 
 export default class App extends Component {
     render() {
         return (
             <div>
-                <SearchInput />
+                <h1>Weather Lookup</h1>
+                <SearchBar />
+                <WeatherList />
             </div>
         )
     }

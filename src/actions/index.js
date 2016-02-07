@@ -21,7 +21,13 @@ export function fetchWeather(city) {
         dispatch(isLoading(true))
         return axios.get(url)
             .then((res) => {
-                dispatch({ type: FETCH_WEATHER, payload: res.data.list })
+                dispatch({
+                    type: FETCH_WEATHER,
+                    payload: res.data.list,
+                    lat: res.data.city.coord.lat,
+                    lon: res.data.city.coord.lon,
+                    city: res.data.city.name
+                 })
             });
     }
 }

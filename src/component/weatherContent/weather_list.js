@@ -11,7 +11,7 @@ class WeatherList extends Component {
 
         return weather.weather.map((day, ind) => {
             return (
-                <div className='panels1' key={day.dt}>
+                <div className='weather-list' key={day.dt}>
                     <WeatherItem
                         temp={Math.round(day.temp.day)}
                         wind={Math.round(day.speed)}
@@ -28,11 +28,14 @@ class WeatherList extends Component {
         if (this.props.weather.city) {
             map = <GoogleMap lat={this.props.weather.lat} lon={this.props.weather.lon} />
         }
-        console.log(this.props.weather)
+
         return (
-            <div className='text-center'>
-                {this.renderWeatherItems()}
-                <div className='googleMap col-md-3'>
+            <div>
+                <div className='text-center'>
+                    {this.renderWeatherItems()}
+                </div>
+
+                <div className='googleMap'>
                     {map}
                 </div>
             </div>

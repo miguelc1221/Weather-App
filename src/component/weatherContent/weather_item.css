@@ -1,47 +1,46 @@
 .panel {
     border: none;
-}
-.weather-panel {
     width: 210px;
     margin-top: 100px;
     text-align: center;
     padding: 0 0 10px 0;
     border-radius: 0;
-}
 
-.weather-body {
-    position: relative;
-}
+    .panel-heading {
+        font-size: 2.5em;
+        background-color: #93c757 !important;
+        border-radius: 0;
+    }
 
-.weather-heading {
-    font-size: 2.5em;
-    background-color: #93c757 !important;
-    border-radius: 0;
-}
+    .panel-body {
+        position: relative;
+    }
 
-.temp {
-    font-size: 3.5em;
-}
+    .temp {
+        font-size: 3.5em;
+    }
 
-#degree {
-    font-size: 27px;
-    position: absolute;
-    top: 27px
-}
+    #degree {
+        font-size: 27px;
+        position: absolute;
+        top: 27px;
+    }
 
-#degreeSymbol {
-    font-size: 50px;
-}
-
-.googleMap {
-    margin-top: 25px;
-    width: 370px;
-    height: 370px;
-}
-
-.panels1 {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: center;
+    #degreeSymbol {
+        font-size: 50px;
+    }
 
 }
+
+    .googleMap {
+        width: 370px;
+        height: 370px;
+        margin: 0 auto;
+    }
+
+    .weather-list {
+        display: inline-block;
+        margin: 0 auto;
+        text-align: center;
+
+    }

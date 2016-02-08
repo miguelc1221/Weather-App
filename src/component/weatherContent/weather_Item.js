@@ -5,9 +5,9 @@ export default (props) => {
 
     return (
         <div>
-            <div className="panel panel-default weather-panel">
-                <div className="panel-heading weather-heading">{props.day}</div>
-                <div className="panel-body weather-body">
+            <div className="panel panel-default">
+                <div className="panel-heading">{props.day}</div>
+                <div className="panel-body">
                     <span className='temp'>{props.temp}<span id='degreeSymbol'>°</span><span id='degree'>F</span></span>
                 </div>
                 <div>

@@ -1,6 +1,9 @@
 {
   "name": "my-react-boilerplate",
   "version": "1.0.0",
+  "engines": {
+    "node": "5.0.0"
+  },
   "description": "Starter package for React/React-Router/Redux/Express",
   "scripts": {
     "clean": "rimraf dist",

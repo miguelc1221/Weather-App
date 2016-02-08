@@ -2,7 +2,7 @@ import axios from 'axios';
 import config from '../config/config.js';
 
 const API_KEY = config.apiKey;
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast/daily`;
+const ROOT_URL = 'https://api.apixu.com/v1/forecast.json';
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 export const IS_LOADING = 'IS_LOADING';
@@ -15,7 +15,7 @@ function isLoading(ans) {
 }
 
 export function fetchWeather(city) {
-    const url = `${ROOT_URL}?q=${city},us&units=imperial&cnt=5&appid=${API_KEY}`;
+    const url = `${ROOT_URL}?key=${API_KEY}&q=${city}&days=5`;
     const request = axios.get(url);
 
     return (dispatch) => {
@@ -24,10 +24,10 @@ export function fetchWeather(city) {
             .then((res) => {
                 dispatch({
                     type: FETCH_WEATHER,
-                    payload: res.data.list,
-                    lat: res.data.city.coord.lat,
-                    lon: res.data.city.coord.lon,
-                    city: res.data.city.name
+                    payload: res.data.forecast.forecastday,
+                    lat: res.data.location.lat,
+                    lon: res.data.location.lon,
+                    city: res.data.location.name
                  })
             });
     }

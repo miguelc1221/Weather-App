@@ -15,6 +15,9 @@ export default (props) => {
                 </div>
                 <div>
                     {props.description}
+                    <div>
+                        <img src={props.icon} />
+                    </div>
                 </div>
             </div>
         </div>

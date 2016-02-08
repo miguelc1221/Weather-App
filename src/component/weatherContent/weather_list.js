@@ -13,9 +13,10 @@ class WeatherList extends Component {
             return (
                 <div className='weather-list' key={day.dt}>
                     <WeatherItem
-                        temp={Math.round(day.temp.day)}
-                        wind={Math.round(day.speed)}
-                        description={day.weather[0].description}
+                        temp={Math.round(day.day.avgtemp_f)}
+                        wind={Math.round(day.day.maxwind_mph)}
+                        description={day.day.condition.text}
+                        icon={day.day.condition.icon}
                         day={days[ind]}
                         />
                 </div>
@@ -28,7 +29,6 @@ class WeatherList extends Component {
         if (this.props.weather.city) {
             map = <GoogleMap lat={this.props.weather.lat} lon={this.props.weather.lon} />
         }
-
         return (
             <div>
                 <div className='text-center'>

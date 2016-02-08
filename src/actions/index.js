@@ -27,7 +27,8 @@ export function fetchWeather(city) {
                     payload: res.data.forecast.forecastday,
                     lat: res.data.location.lat,
                     lon: res.data.location.lon,
-                    city: res.data.location.name
+                    city: res.data.location.name,
+                    country: res.data.location.country
                  })
             });
     }

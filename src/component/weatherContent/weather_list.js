@@ -7,7 +7,9 @@ import GoogleMap from '../googleMap/google_map';
 class WeatherList extends Component {
     renderWeatherItems() {
         var { weather } = this.props;
-        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var dayObj = new Date();
+        var today = dayObj.getDay();
 
         return weather.weather.map((day, ind) => {
             return (
@@ -17,7 +19,7 @@ class WeatherList extends Component {
                         wind={Math.round(day.day.maxwind_mph)}
                         description={day.day.condition.text}
                         icon={day.day.condition.icon}
-                        day={days[ind]}
+                        day={days[ind + today]}
                         />
                 </div>
             )
@@ -29,8 +31,10 @@ class WeatherList extends Component {
         if (this.props.weather.city) {
             map = <GoogleMap lat={this.props.weather.lat} lon={this.props.weather.lon} />
         }
+        console.log(this.props.weather)
         return (
             <div>
+                <h2 className='city'>{this.props.weather.city} {this.props.weather.country}</h2>
                 <div className='text-center'>
                     {this.renderWeatherItems()}
                 </div>

@@ -32,9 +32,15 @@
 
 }
 
+    .city {
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: -90px;
+    }
+
     .googleMap {
-        width: 370px;
-        height: 370px;
+        width: 670px;
+        height: 270px;
         margin: 0 auto;
     }
 

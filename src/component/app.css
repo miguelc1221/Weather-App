@@ -9,3 +9,28 @@ body {
         margin-bottom: 30px;
     }
 }
+
+
+ @media (max-width : 750px) {
+    .weather-list {
+        height: 100px;
+        /*margin-bottom: -350px;*/
+    }
+
+    body {
+        h1 {
+            font-size: 50px;
+        }
+
+        .city {
+            margin-bottom: -60px;
+        }
+
+        .googleMap {
+            margin-top: 75px;
+            width: 350px;
+        }
+    }
+
+
+}

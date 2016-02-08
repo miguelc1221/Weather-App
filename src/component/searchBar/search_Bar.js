@@ -26,7 +26,7 @@ class SearchBar extends Component {
                     type='text'
                     onChange={this.handleOnChange}
                     value={this.state.inputValue}
-                    placeholder='Get forecast for the next 5 days'
+                    placeholder='Get forecast for the next 5 days (New York,US)'
                     className='form-control' />
                 <span className="input-group-btn">
                     <button type='submit' className="btn btn-default">Submit</button>

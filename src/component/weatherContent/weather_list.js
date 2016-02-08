@@ -11,7 +11,7 @@ class WeatherList extends Component {
 
         return weather.weather.map((day, ind) => {
             return (
-                <div className='weather-list' key={day.dt}>
+                <div className='weather-list' key={day.date_epoch}>
                     <WeatherItem
                         temp={Math.round(day.day.avgtemp_f)}
                         wind={Math.round(day.day.maxwind_mph)}

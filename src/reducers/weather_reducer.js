@@ -1,7 +1,8 @@
-import { FETCH_WEATHER, IS_LOADING } from '../actions/index.js';
+import { FETCH_WEATHER, IS_LOADING, NO_WEATHER } from '../actions/index.js';
 
 const INITIAL_STATE = {
     isLoading: false,
+    noWeather: false,
     city: null,
     country: null,
     lat: null,
@@ -12,7 +13,10 @@ const INITIAL_STATE = {
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
         case FETCH_WEATHER:
-            return { ...state, isLoading: false, weather: action.payload, lat: action.lat, lon: action.lon, city: action.city + ',', country: action.country };
+            return { ...state, isLoading: false, weather: action.payload, lat: action.lat, lon: action.lon, city: action.city + ',', country: action.country, noWeather: false };
+        case NO_WEATHER: {
+            return { ...state, noWeather: true }
+        };
         case IS_LOADING:
             return { ...state, isLoading: true, city: null, country: null }
         default:

@@ -38,6 +38,11 @@
         margin-bottom: -90px;
     }
 
+    .cityNotFound {
+        @extend .city;
+        font-size: 45px;
+    }
+
     .googleMap {
         width: 670px;
         height: 270px;

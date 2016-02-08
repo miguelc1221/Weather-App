@@ -6,6 +6,7 @@ const ROOT_URL = 'https://api.apixu.com/v1/forecast.json';
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 export const IS_LOADING = 'IS_LOADING';
+export const NO_WEATHER = 'NO_WEATHER';
 
 function isLoading(ans) {
     return {
@@ -30,6 +31,11 @@ export function fetchWeather(city) {
                     city: res.data.location.name,
                     country: res.data.location.country
                  })
+            })
+            .catch((res) => {
+                dispatch({
+                    type: NO_WEATHER
+                })
             });
     }
 }

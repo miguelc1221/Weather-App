@@ -28,20 +28,30 @@ class WeatherList extends Component {
 
     render () {
         var map;
+        var weatherContent;
+
         if (this.props.weather.city) {
             map = <GoogleMap lat={this.props.weather.lat} lon={this.props.weather.lon} />
         }
-        console.log(this.props.weather)
+
+        if (this.props.weather.noWeather) {
+            weatherContent = <div className='cityNotFound'>City not found, please try again</div>
+        } else {
+            weatherContent = <div>
+                                <h2 className='city'>{this.props.weather.city} {this.props.weather.country}</h2>
+                                <div className='text-center'>
+                                    {this.renderWeatherItems()}
+                                </div>
+
+                                <div className='googleMap'>
+                                    {map}
+                                </div>
+                            </div>
+        }
+
         return (
             <div>
-                <h2 className='city'>{this.props.weather.city} {this.props.weather.country}</h2>
-                <div className='text-center'>
-                    {this.renderWeatherItems()}
-                </div>
-
-                <div className='googleMap'>
-                    {map}
-                </div>
+                {weatherContent}
             </div>
         );
     }

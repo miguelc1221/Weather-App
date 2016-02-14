@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FadeLoader } from 'halogen';
 
 import WeatherItem from './weather_Item.js';
 import GoogleMap from '../googleMap/google_map';
@@ -34,24 +35,28 @@ class WeatherList extends Component {
             map = <GoogleMap lat={this.props.weather.lat} lon={this.props.weather.lon} />
         }
 
-        if (this.props.weather.noWeather) {
-            weatherContent = <div className='cityNotFound'>City not found, please try again</div>
+        if (this.props.weather.isLoading) {
+            weatherContent = <FadeLoader className='spinner' size="5px" color='#da1a0c'/>
         } else {
-            weatherContent = <div>
-                                <h2 className='city'>{this.props.weather.city} {this.props.weather.country}</h2>
-                                <div className='text-center'>
-                                    {this.renderWeatherItems()}
-                                </div>
+            if (this.props.weather.noWeather) {
+                weatherContent = <div className='cityNotFound'>City not found, please try again</div>
+            } else {
+                weatherContent = <div>
+                                    <h2 className='city'>{this.props.weather.city} {this.props.weather.country}</h2>
+                                    <div className='text-center'>
+                                        {this.renderWeatherItems()}
+                                    </div>
 
-                                <div className='googleMap'>
-                                    {map}
+                                    <div className='googleMap'>
+                                        {map}
+                                    </div>
                                 </div>
-                            </div>
+            }
         }
 
         return (
             <div>
-                {weatherContent}
+                { weatherContent }
             </div>
         );
     }

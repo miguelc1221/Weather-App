@@ -46,7 +46,7 @@
     .googleMap {
         width: 670px;
         height: 270px;
-        margin: 0 auto;
+        margin: 0 auto 15px;
     }
 
     .weather-list {

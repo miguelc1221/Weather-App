@@ -17,7 +17,6 @@ function isLoading(ans) {
 
 export function fetchWeather(city) {
     const url = `${ROOT_URL}?key=${API_KEY}&q=${city}&days=5`;
-    const request = axios.get(url);
 
     return (dispatch) => {
         dispatch(isLoading(true))

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { FadeLoader } from 'halogen';
 
@@ -62,6 +62,17 @@ class WeatherList extends Component {
     }
 }
 
+WeatherList.propTypes = {
+    weather: PropTypes.shape({
+        weather: PropTypes.array,
+        isLoading: PropTypes.bool.isRequired,
+        noWeather: PropTypes.bool.isRequired,
+        city: PropTypes.string,
+        country: PropTypes.string,
+        lat: PropTypes.number,
+        lon: PropTypes.number
+    })
+}
 function mapStateToProps(state) {
     return { weather: state.weather }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../../actions/index.js';
 
@@ -34,6 +34,10 @@ class SearchBar extends Component {
             </form>
         )
     }
+}
+
+SearchBar.propTypes = {
+    fetchWeather: PropTypes.func
 }
 
 

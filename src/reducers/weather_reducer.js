@@ -19,7 +19,8 @@ export default function(state = INITIAL_STATE, action) {
                 weather: action.payload,
                 lat: action.lat,
                 lon: action.lon,
-                city: action.city + ',', country: action.country,
+                city: action.city + ',', 
+                country: action.country,
                 noWeather: false
             };
         case NO_WEATHER: {

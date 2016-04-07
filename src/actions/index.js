@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from '../config/config.js';
 
-const API_KEY = config.apiKey;
+const API_KEY = config.secretKey;
 const ROOT_URL = 'https://api.apixu.com/v1/forecast.json';
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';

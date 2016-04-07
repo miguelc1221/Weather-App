@@ -1,8 +1,4 @@
 import axios from 'axios';
-import config from '../config/config.js';
-
-const API_KEY = config.secretKey;
-const ROOT_URL = 'https://api.apixu.com/v1/forecast.json';
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 export const IS_LOADING = 'IS_LOADING';
@@ -16,11 +12,11 @@ function isLoading(ans) {
 }
 
 export function fetchWeather(city) {
-    const url = `${ROOT_URL}?key=${API_KEY}&q=${city}&days=5`;
-
     return (dispatch) => {
         dispatch(isLoading(true))
-        return axios.get(url)
+        return axios.post('/api', {
+                city: city
+            })
             .then((res) => {
                 dispatch({
                     type: FETCH_WEATHER,

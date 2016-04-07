@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../../actions/index.js';
 
-import './search_bar.css';
+import './search_bar.pcss';
 
 class SearchBar extends Component {
     constructor(props) {

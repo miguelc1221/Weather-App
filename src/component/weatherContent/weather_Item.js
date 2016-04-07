@@ -1,5 +1,5 @@
 import React from 'react';
-import './weather_item.css';
+import './weather_item.pcss';
 
 export default (props) => {
 

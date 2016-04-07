@@ -37,7 +37,7 @@ module.exports = {
               exclude: /node_modules/,
               loaders: ['babel']
           }, {
-              test: /\.css$/,
+              test: /\.(css|pcss)$/,
               loader: ExtractTextPlugin.extract('style', 'css-loader!postcss-loader'),
           }
       ]

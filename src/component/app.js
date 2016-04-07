@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './app.css';
+import './app.pcss';
 
 import SearchBar from './searchBar/search_Bar';
 import WeatherList from './weatherContent/weather_list.js';

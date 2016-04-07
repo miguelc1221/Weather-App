@@ -29,7 +29,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loaders: ['babel']
             }, {
-                test: /\.css$/,
+                test: /\.(css|pcss)$/,
                 loaders: ['style','css','postcss']
             }
         ]

@@ -1,6 +1,5 @@
 # Weather App
 
-Weather app using React, OpenWeatherMap API and GoogleMaps.
-Simply search for the place you wish to see the weather for and Voilà
-you have the weather and map of the place.
+<p>Simple weather app that allows a user to search for a city and receive the weather for the next five days as well as a google map of the city.</p>
 
+DEMO: https://weatherlookup.herokuapp.com/
